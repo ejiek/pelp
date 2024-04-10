@@ -1,7 +1,7 @@
 > [!WARNING]
 > Early stages of development. Everything might change. Many things might not work.
 
-pelp - a **p*resentation h**elp**er. Makes it easy to create a revealjs presentation from a Markdown file.
+pelp - a **p**resentation h**elp**er. Makes it easy to create a revealjs presentation from a Markdown file.
 
 - Creates and serves a presentation
 - Updates presentation in a browser when a source file changes
