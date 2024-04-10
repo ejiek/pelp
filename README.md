@@ -12,3 +12,12 @@ New presentations each Monday
 - sed - to replace the date in the template file
 
 Some dependencies might be removed due to functionality being implemented by pelp itselmented by pelp.
+
+## Roadmap
+
+- [ ] design & implement the `new` command
+- [ ] package for nix
+- [ ] add support for recurring presentations
+- [ ] add support for templates (at least for recurring presentations)
+- [ ] design & implement the `deploy` command
+- [ ] brush the project up
