@@ -21,3 +21,5 @@ Some dependencies might be removed due to functionality being implemented by pel
 - [ ] add support for templates (at least for recurring presentations)
 - [ ] design & implement the `deploy` command
 - [ ] brush the project up
+  - [ ] nice error handling
+  - [ ] less unwrap(), more handling
