@@ -20,13 +20,14 @@ Some dependencies might be removed due to functionality being implemented by pel
 ## Roadmap
 
 - [ ] design & implement the `new` command
-- [ ] package for nix
+- [x] package for nix (flake.nix & flakehub)
 - [ ] add support for recurring presentations
 - [ ] add support for templates (at least for recurring presentations)
 - [ ] design & implement the `deploy` command
 - [ ] brush the project up
   - [ ] nice error handling
   - [ ] less unwrap(), more handling
+- [ ] package for the Arch User Repository
 
 # Usage as a flake
 
