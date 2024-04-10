@@ -21,6 +21,7 @@ Some dependencies might be removed due to functionality being implemented by pel
 
 - [ ] design & implement the `new` command
 - [x] package for nix (flake.nix & flakehub)
+- [ ] autocomplete
 - [ ] add support for recurring presentations
 - [ ] add support for templates (at least for recurring presentations)
 - [ ] design & implement the `deploy` command
