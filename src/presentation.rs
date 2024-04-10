@@ -22,7 +22,7 @@ impl Presentation {
         }
     }
 
-    pub fn build(&self) {
+    pub fn build(&self) -> Result<(), std::io::Error> {
         let _ = match &self.base_dir {
             Some(dir_path) => env::set_current_dir(dir_path),
             None => Ok(()),
@@ -33,7 +33,7 @@ impl Presentation {
             .output()
             .expect("Failed to run pandoc");
 
-        let _build = Command::new("pandoc")
+        let build = Command::new("pandoc")
             .arg("--to=revealjs")
             .arg("--slide-level=2")
             //.arg("--css=um.css")
@@ -42,8 +42,14 @@ impl Presentation {
             .arg(&self.source_md)
             .output()
             .expect("Failed to build");
-        // TODO: check if build is successful
-        println!("{:?}", _build);
+
+        if build.status.success() {
+            println!("{:?} successfully build into {:?}", &self.source_md, &self.target_html);
+            Ok(())
+        } else {
+            eprintln!("Failed to build {:?}. Pandoc error:\n{}", &self.source_md, String::from_utf8(build.stderr).unwrap());
+            Err(std::io::Error::new(std::io::ErrorKind::Other, "Failed to build"))
+        }
     }
 
     pub fn edit(&self) {
@@ -64,7 +70,7 @@ impl Presentation {
             None => Ok(()),
         };
 
-        self.build();
+        let _ = self.build();
         println!("Successfully built");
 
         let _live_server_check = Command::new("live-server")
@@ -92,7 +98,7 @@ impl Presentation {
                 .arg(&self.source_md)
                 .output()
                 .expect("Failed to run inotifywait");
-            self.build();
+            let _ = self.build();
         }
     }
 }

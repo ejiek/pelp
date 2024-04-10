@@ -104,14 +104,14 @@ fn main() {
 
     let presentation = Presentation::new(source_md, output_html, None);
 
-    match &cli.command {
+    let _ = match &cli.command {
         Some(Commands::Build(_)) => presentation.build(),
-        Some(Commands::Deploy(_)) => println!("Under consctuction..."),
-        Some(Commands::Edit(_)) => presentation.edit(),
-        Some(Commands::Print(_)) => println!("{}", presentation),
-        Some(Commands::Serve(_)) => presentation.serve(),
-        Some(Commands::New) => println!("Under consctuction..."),
-        None => println!("help output should be here"),
+        Some(Commands::Deploy(_)) => {println!("Under consctuction..."); Ok(())},
+        Some(Commands::Edit(_)) => {presentation.edit(); Ok(())},
+        Some(Commands::Print(_)) => {println!("{}", presentation); Ok(())},
+        Some(Commands::Serve(_)) => {presentation.serve(); Ok(())},
+        Some(Commands::New) => {println!("Under consctuction..."); Ok(())},
+        None => {println!("help output should be here"); Ok(())},
     };
 }
 
