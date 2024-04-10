@@ -3,8 +3,10 @@ name = "pelp"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["Vlad Petrov <oss@ejiek.id>"]
+repository = "https://github.com/ejiek/pelp"
+homepage = "https://github.com/ejiek/pelp"
+readme = "README.md"
 
 [dependencies]
 clap = { version = "4.5.4", features = ["derive"] }
