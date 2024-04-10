@@ -1,5 +1,6 @@
 [package]
 name = "pelp"
+description = "A (p)resentation h(elp)er. Makes it easy to create a revealjs presentation from a Markdown file."
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
