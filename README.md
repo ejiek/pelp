@@ -1,7 +1,11 @@
-pelp - a **p*resentation h**elp**er. Makes it easy to create reveljs presentation from Markdown file.
+> [!WARNING]
+> Early stages of development. Everything might change. Many things might not work.
 
-Creates and serves a presentation
-New presentations each Monday
+pelp - a **p*resentation h**elp**er. Makes it easy to create a revealjs presentation from a Markdown file.
+
+- Creates and serves a presentation
+- Updates presentation in a browser when a source file changes
+- Helps to create and manage recurring presentations
 
 ## Dependencies:
 
@@ -23,3 +27,20 @@ Some dependencies might be removed due to functionality being implemented by pel
 - [ ] brush the project up
   - [ ] nice error handling
   - [ ] less unwrap(), more handling
+
+# Usage as a flake
+
+[![FlakeHub](https://img.shields.io/endpoint?url=https://flakehub.com/f/ejiek/pelp/badge)](https://flakehub.com/flake/ejiek/pelp)
+
+Add pelp to your `flake.nix`:
+
+```nix
+{
+  inputs.pelp.url = "https://flakehub.com/f/ejiek/pelp/*.tar.gz";
+
+  outputs = { self, pelp }: {
+    # Use in your outputs
+  };
+}
+
+```
